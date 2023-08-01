@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Nakos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/common.css"/>
+    <script>
+    let next = function(){}
+      function discord() {
+        
+        Array.from(document.getElementsByClassName("modalshow")).forEach((x)=>x.style.display = "block");
+        document.getElementById("modaltext").innerHTML = "@nako5"
+      }
+      function fa() {
+        Array.from(document.getElementsByClassName("modalshow")).forEach((x)=>x.style.display = "block");
+        document.getElementById("modaltext").innerHTML = "i dont use that shit"
+        next = ()=>window.open("https://www.furaffinity.net/user/nako5/").focus()
+      }
+      function dismiss() {
+        Array.from(document.getElementsByClassName("modalshow")).forEach((x)=>x.style.display = "none");
+        next()
+        next = function(){}
+      }
+    </script>
+  </head>
+  <body>
+      <video muted autoplay preload="auto">
+      <source src="/firewatch.mp4" type="video/mp4"/>
+    </video>
+    <div class="ctr">
+      <a href="#" onclick="discord()">Discord</a>
+      <a href="#" onclick="fa()">Furaffinity</a>
+    </div>
+    <div class="modal modalshow">
+      <p id="modaltext">Modal text</p>
+      <button onclick="dismiss()">Ok</button>
+    </div>
+    <div class="modalshow modaloverlay"/>
+    <style>
+   .modalshow{
+     display: none;
+   }
+    .modal {
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      background-color: #21212188;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border:  5px solid  white;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 10px 5px 5px #00000088;
+      z-index: 2;
+      width: 80vw;
+    }
+    .modaloverlay {
+      content: " ";
+      position: absolute !important;
+      background: #11111177;
+      width: 100vw;
+      height: 100vh;
+      left: 0;
+      top:0;
+      z-index: 1;
+      transform: unset;
+    }
+      a, p {
+        font-family: 'Noto Serif', serif;
+        color: white;
+        
+        font-size: 5em;
+      }
+      p {
+        font-size: 3em;
+        font-family: 'Noto Sans Mono', monospace;
+      }
+      a {
+        text-decoration: underline;
+      }
+      
+      .ctr{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      
+    </style>
+  </body>
+</html>
